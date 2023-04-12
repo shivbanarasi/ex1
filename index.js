@@ -1,7 +1,7 @@
 var num1Element = document.getElementById('num1');
 var num2Element = document.getElementById("num2");
 var buttonElement = document.querySelector('button');
-var numResult = [];
+var numResult = []; //generic
 var stringResult = [];
 function add(num1, num2) {
     if (typeof num1 === "number" && typeof num2 === "number") {
@@ -25,4 +25,12 @@ buttonElement.addEventListener('click', function () {
     console.log(result);
     printResult({ val: result, timestamp: new Date });
     console.log(numResult, stringResult);
+});
+var myPromise = new Promise(function (resolve, reject) {
+    setTimeout(function () {
+        resolve('it worked');
+    }, 1000);
+});
+myPromise.then(function (result) {
+    console.log(result);
 });
