@@ -2,7 +2,7 @@ const num1Element=document.getElementById('num1') as HTMLInputElement
 const num2Element=document.getElementById("num2") as HTMLInputElement
 const buttonElement=document.querySelector('button')!;
 
-const numResult:number[]=[];
+const numResult:Array<number>=[];  //generic
 const stringResult:string[]=[];
 
 // function add(num1:any,num2:any){
@@ -42,4 +42,12 @@ buttonElement.addEventListener('click',()=>{
     console.log(numResult,stringResult)
 })
  
+const myPromise=new Promise((resolve,reject)=>{
+    setTimeout(()=>{
+        resolve('it worked');
+    },1000)
+});
 
+myPromise.then((result)=>{
+    console.log(result);
+})
